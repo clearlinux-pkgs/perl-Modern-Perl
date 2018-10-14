@@ -4,14 +4,14 @@
 #
 Name     : perl-Modern-Perl
 Version  : 1.20180928
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20180928.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20180928.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libm/libmodern-perl-perl/libmodern-perl-perl_1.20180701-1.debian.tar.xz
 Summary  : 'enable all of the features of Modern Perl with one import'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
-Requires: perl-Modern-Perl-license
+Requires: perl-Modern-Perl-license = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -67,13 +67,13 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Modern-Perl
-cp LICENSE %{buildroot}/usr/share/doc/perl-Modern-Perl/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/doc/perl-Modern-Perl/deblicense_copyright
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Modern-Perl
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Modern-Perl/LICENSE
+cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Modern-Perl/deblicense_copyright
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -82,7 +82,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Modern/Perl.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Modern/Perl.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -90,5 +90,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/doc/perl-Modern-Perl/LICENSE
-/usr/share/doc/perl-Modern-Perl/deblicense_copyright
+/usr/share/package-licenses/perl-Modern-Perl/LICENSE
+/usr/share/package-licenses/perl-Modern-Perl/deblicense_copyright
