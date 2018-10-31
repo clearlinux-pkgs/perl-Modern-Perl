@@ -4,10 +4,9 @@
 #
 Name     : perl-Modern-Perl
 Version  : 1.20181021
-Release  : 6
+Release  : 7
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20181021.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20181021.tar.gz
-Source1  : http://http.debian.net/debian/pool/main/libm/libmodern-perl-perl/libmodern-perl-perl_1.20180901-1.debian.tar.xz
 Summary  : 'enable all of the features of Modern Perl with one import'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
@@ -40,10 +39,6 @@ license components for the perl-Modern-Perl package.
 
 %prep
 %setup -q -n Modern-Perl-1.20181021
-cd ..
-%setup -q -T -D -n Modern-Perl-1.20181021 -b 1
-mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Modern-Perl-1.20181021/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -69,7 +64,6 @@ make TEST_VERBOSE=1 test
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Modern-Perl
 cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Modern-Perl/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Modern-Perl/deblicense_copyright
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -91,4 +85,3 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-Modern-Perl/LICENSE
-/usr/share/package-licenses/perl-Modern-Perl/deblicense_copyright
