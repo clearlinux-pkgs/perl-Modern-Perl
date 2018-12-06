@@ -4,7 +4,7 @@
 #
 Name     : perl-Modern-Perl
 Version  : 1.20181021
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20181021.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20181021.tar.gz
 Summary  : 'enable all of the features of Modern Perl with one import'
