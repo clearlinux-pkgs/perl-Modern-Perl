@@ -4,10 +4,10 @@
 #
 Name     : perl-Modern-Perl
 Version  : 1.20190601
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20190601.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20190601.tar.gz
-Summary  : enable all of the features of Modern Perl with one command
+Summary  : 'enable all of the features of Modern Perl with one import'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Modern-Perl-license = %{version}-%{release}
@@ -24,7 +24,6 @@ one:
 Summary: dev components for the perl-Modern-Perl package.
 Group: Development
 Provides: perl-Modern-Perl-devel = %{version}-%{release}
-Requires: perl-Modern-Perl = %{version}-%{release}
 Requires: perl-Modern-Perl = %{version}-%{release}
 
 %description dev
