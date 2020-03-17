@@ -4,10 +4,10 @@
 #
 Name     : perl-Modern-Perl
 Version  : 1.20200211
-Release  : 23
+Release  : 24
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20200211.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20200211.tar.gz
-Summary  : enable all of the features of Modern Perl with one command
+Summary  : 'enable all of the features of Modern Perl with one import'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Modern-Perl-license = %{version}-%{release}
@@ -25,7 +25,6 @@ one:
 Summary: dev components for the perl-Modern-Perl package.
 Group: Development
 Provides: perl-Modern-Perl-devel = %{version}-%{release}
-Requires: perl-Modern-Perl = %{version}-%{release}
 Requires: perl-Modern-Perl = %{version}-%{release}
 
 %description dev
@@ -101,5 +100,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Modern/Perl.pm
-/usr/lib/perl5/vendor_perl/5.30.1/odern/Perl.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Modern/Perl.pm
+/usr/lib/perl5/vendor_perl/5.30.2/odern/Perl.pm
