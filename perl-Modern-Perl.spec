@@ -4,7 +4,7 @@
 #
 Name     : perl-Modern-Perl
 Version  : 1.20200211
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20200211.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20200211.tar.gz
 Summary  : 'enable all of the features of Modern Perl with one import'
@@ -100,5 +100,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/Modern/Perl.pm
-/usr/lib/perl5/vendor_perl/5.30.3/odern/Perl.pm
+/usr/lib/perl5/vendor_perl/5.32.1/Modern/Perl.pm
+/usr/lib/perl5/vendor_perl/5.32.1/odern/Perl.pm
