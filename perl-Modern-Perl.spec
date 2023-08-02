@@ -4,7 +4,7 @@
 #
 Name     : perl-Modern-Perl
 Version  : 1.20230106
-Release  : 32
+Release  : 33
 URL      : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20230106.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CH/CHROMATIC/Modern-Perl-1.20230106.tar.gz
 Summary  : 'enable all of the features of Modern Perl with one import'
